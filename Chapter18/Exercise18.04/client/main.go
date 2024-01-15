@@ -28,7 +28,7 @@ func postFileAndReturnResponse(filename string) string {
 	if err != nil {
 		log.Fatal(err)
 	}
-	// close the file writter. This lets it know we're done copying in data
+	// close the file writer. This lets it know we're done copying in data
 	multipartWriter.Close()
 	// create the POST request to send the file data to the server
 	req, err := http.NewRequest("POST", "http://localhost:8080", &fileDataBuffer)
