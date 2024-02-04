@@ -1,2 +1,2 @@
-Odd 9
 Even 12
+Odd 9
