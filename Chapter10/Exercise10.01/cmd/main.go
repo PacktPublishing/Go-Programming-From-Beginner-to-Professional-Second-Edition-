@@ -1,6 +1,6 @@
 package main
 
-import "github.com/packt-book/Go-Programming---From-Beginner-to-Professional-Second-Edition-/Chapter10/Exercise10.01/shape"
+import "exercise10.01/pkg/shape"
 
 func main() {
 	t := shape.Triangle{Base: 15.5, Height: 20.1}

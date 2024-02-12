@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/packt-book/Go-Programming---From-Beginner-to-Professional-Second-Edition-/Chapter10/Activity10.01/payroll"
+	"activity10.01/pkg/payroll"
 )
 
 var employeeReview = make(map[string]interface{})
