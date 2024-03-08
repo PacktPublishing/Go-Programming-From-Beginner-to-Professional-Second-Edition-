@@ -7,6 +7,7 @@ type Builder struct {
 	addr *Builder // of receiver, to detect copies by value
 	buf  []byte
 }
+
 // https://golang.org/src/strings/compare.go
 package strings
 func Compare(a, b string) int {
@@ -18,6 +19,7 @@ func Compare(a, b string) int {
 	}
 	return +1
 }
+
 // https://golang.org/src/strings/replace.go
 package strings
 import (
