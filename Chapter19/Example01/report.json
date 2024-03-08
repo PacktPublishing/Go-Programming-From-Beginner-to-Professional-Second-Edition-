@@ -1,0 +1,8 @@
+{"Time":"2024-02-05T22:53:10.295497-06:00","Action":"start","Package":"github.com/packt-book/Go-Programming---From-Beginner-to-Professional-Second-Edition-/Chapter20/Exercise20.04"}
+{"Time":"2024-02-05T22:53:10.620583-06:00","Action":"run","Package":"github.com/packt-book/Go-Programming---From-Beginner-to-Professional-Second-Edition-/Chapter20/Exercise20.04","Test":"FuzzAdd"}
+{"Time":"2024-02-05T22:53:10.620668-06:00","Action":"output","Package":"github.com/packt-book/Go-Programming---From-Beginner-to-Professional-Second-Edition-/Chapter20/Exercise20.04","Test":"FuzzAdd","Output":"=== RUN   FuzzAdd\n"}
+{"Time":"2024-02-05T22:53:10.620702-06:00","Action":"output","Package":"github.com/packt-book/Go-Programming---From-Beginner-to-Professional-Second-Edition-/Chapter20/Exercise20.04","Test":"FuzzAdd","Output":"--- PASS: FuzzAdd (0.00s)\n"}
+{"Time":"2024-02-05T22:53:10.620706-06:00","Action":"pass","Package":"github.com/packt-book/Go-Programming---From-Beginner-to-Professional-Second-Edition-/Chapter20/Exercise20.04","Test":"FuzzAdd","Elapsed":0}
+{"Time":"2024-02-05T22:53:10.620721-06:00","Action":"output","Package":"github.com/packt-book/Go-Programming---From-Beginner-to-Professional-Second-Edition-/Chapter20/Exercise20.04","Output":"PASS\n"}
+{"Time":"2024-02-05T22:53:10.620934-06:00","Action":"output","Package":"github.com/packt-book/Go-Programming---From-Beginner-to-Professional-Second-Edition-/Chapter20/Exercise20.04","Output":"ok  \tgithub.com/packt-book/Go-Programming---From-Beginner-to-Professional-Second-Edition-/Chapter20/Exercise20.04\t0.323s\n"}
+{"Time":"2024-02-05T22:53:10.626537-06:00","Action":"pass","Package":"github.com/packt-book/Go-Programming---From-Beginner-to-Professional-Second-Edition-/Chapter20/Exercise20.04","Elapsed":0.331}

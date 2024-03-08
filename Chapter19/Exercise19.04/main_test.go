@@ -1,18 +1,34 @@
 package main
 
 import (
-	"bytes"
 	"log"
 	"testing"
 )
 
-func Test_Main(t *testing.T) {
-	var s bytes.Buffer
-	log.SetOutput(&s)
-	log.SetFlags(0)
-	main()
+func setup() {
+	log.Println("setup() running")
+}
 
-	if s.String() != "Hello\n" {
-		t.Error(s.String())
-	}
+func teardown() {
+	log.Println("teardown() running")
+}
+
+// TestMain runs the entire test suite
+func TestMain(m *testing.M) {
+	setup()
+	defer teardown()
+
+	m.Run()
+}
+
+func TestA(t *testing.T) {
+	log.Println("TestA running")
+}
+
+func TestB(t *testing.T) {
+	log.Println("TestB running")
+}
+
+func TestC(t *testing.T) {
+	log.Println("TestC running")
 }

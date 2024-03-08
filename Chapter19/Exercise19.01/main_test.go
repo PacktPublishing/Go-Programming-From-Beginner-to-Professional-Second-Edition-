@@ -1,18 +1,48 @@
 package main
 
 import (
-	"bytes"
-	"log"
 	"testing"
+
+	"gotest.tools/assert"
 )
 
-func Test_Main(t *testing.T) {
-	var s bytes.Buffer
-	log.SetOutput(&s)
-	log.SetFlags(0)
-	main()
+func add(x, y int) int {
+	return x + y
+}
 
-	if s.String() != "5050 55\n" {
-		t.Error(s.String())
+func TestAdd(t *testing.T) {
+	tests := []struct {
+		name   string
+		inputs []int
+		want   int
+	}{
+		{
+			name:   "Test Case 1",
+			inputs: []int{5, 6},
+			want:   11,
+		},
+		{
+			name:   "Test Case 2",
+			inputs: []int{11, 7},
+			want:   18,
+		},
+		{
+			name:   "Test Case 3",
+			inputs: []int{1, 8},
+			want:   9,
+		},
+		{
+			name:   "Test Case 4 (intentional failure)",
+			inputs: []int{2, 3},
+			want:   8, // This should be 5 + 3, intentionally incorrect
+		},
+	}
+
+	for _, test := range tests {
+		test := test
+		t.Run(test.name, func(t *testing.T) {
+			got := add(test.inputs[0], test.inputs[1])
+			assert.Equal(t, test.want, got)
+		})
 	}
 }
