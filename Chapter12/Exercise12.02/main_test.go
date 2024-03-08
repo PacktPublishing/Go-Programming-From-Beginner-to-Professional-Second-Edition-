@@ -1,12 +1,15 @@
 package main
-import "testing"
-import "time"
 
-func TestElapsed(t *testing.T){
-	Start := time.Now()
+import (
+	"testing"
+	"time"
+)
+
+func TestElapsed(t *testing.T) {
+	start := time.Now()
 	time.Sleep(2 * time.Second)
-	End := time.Now()
-	result := elapsedTime(Start,End)
+	end := time.Now()
+	result := elapsedTime(start, end)
 	t.Log(result)
-	
+
 }
