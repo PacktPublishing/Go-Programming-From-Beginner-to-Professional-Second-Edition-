@@ -1,12 +1,18 @@
 package main
 
 import (
+	"bytes"
+	"log"
 	"testing"
 )
 
-func TestGetDataAndReturnResponse(t *testing.T) {
-	data := getDataAndReturnResponse()
-	if data == "" {
-		t.Errorf("Expected non empty string but received: '%s'", data)
+func Test_Main(t *testing.T) {
+	var s bytes.Buffer
+	log.SetOutput(&s)
+	log.SetFlags(0)
+	main()
+
+	if s.String() != "5050 55\n" {
+		t.Error(s.String())
 	}
 }

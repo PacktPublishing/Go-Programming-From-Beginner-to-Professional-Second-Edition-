@@ -1,30 +1,31 @@
 package main
 
 import (
-	"io"
 	"log"
-	"net/http"
+	"time"
 )
 
-func getDataAndReturnResponse() string {
-	// send the Get request
-	r, err := http.Get("https://www.google.com")
-	if err != nil {
-		log.Fatal(err)
+func sum(from,to int) int {
+	res := 0
+	for i:=from;i<=to; i++ {
+		res += i
 	}
 
-	// get data from the response body
-	defer r.Body.Close()
-	data, err := io.ReadAll(r.Body)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	// return the response data
-	return string(data)
+	return res
 }
 
+
 func main() {
-	data := getDataAndReturnResponse()
-	log.Println(data)
+
+	var s1,s2 int
+
+	go func() {
+		s1 = sum(1,100)
+	}()
+
+	s2 = sum(1,10)
+
+	time.Sleep(time.Second)
+
+	log.Println(s1, s2)
 }
