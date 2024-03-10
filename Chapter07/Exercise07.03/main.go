@@ -53,22 +53,18 @@ func newRecord(key string, i interface{}) record {
 	case int:
 		r.valueType = "int"
 		r.data = v
-		return r
 	case bool:
 		r.valueType = "bool"
 		r.data = v
-		return r
 	case string:
 		r.valueType = "string"
 		r.data = v
-		return r
 	case person:
 		r.valueType = "person"
 		r.data = v
-		return r
 	default:
 		r.valueType = "unknown"
 		r.data = v
-		return r
 	}
+	return r
 }

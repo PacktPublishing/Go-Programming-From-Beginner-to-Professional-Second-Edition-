@@ -28,5 +28,18 @@ func payDay(hoursWorked, hourlyRate int) int {
 	if hoursWorked < 0 || hoursWorked > 80 {
 		panic(ErrHoursWorked)
 	}
+
+	if hoursWorked > 40 {
+
+		hoursOver := hoursWorked - 40
+
+		overTime := hoursOver * 2
+
+		regularPay := hoursWorked * hourlyRate
+
+		return regularPay + overTime
+
+	}
+
 	return hoursWorked * hourlyRate
 }
