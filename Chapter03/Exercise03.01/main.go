@@ -28,13 +28,12 @@ func passwordChecker(pw string) bool {
 		if unicode.IsNumber(v) {
 			hasNumber = true
 		}
-		if unicode.IsPunct(v) || unicode.IsSymbol(v)  {
+		if unicode.IsPunct(v) || unicode.IsSymbol(v) {
 			hasSymbol = true
 		}
 	}
 	return hasUpper && hasLower && hasNumber && hasSymbol
 }
-
 
 func main() {
 	if passwordChecker("") {
