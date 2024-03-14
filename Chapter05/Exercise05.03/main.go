@@ -1,21 +1,20 @@
 package main
+
 import (
 	"fmt"
 )
+
 func main() {
 	for i := 1; i <= 15; i++ {
-		n, s := fizzBuzz(i)
-		fmt.Printf("Results:  %d %s\n", n, s)
+		num, result := checkNumbers(i)
+		fmt.Printf("Results:  %d %s\n", num, result)
 	}
 }
-func fizzBuzz(i int) (int, string) {
+func checkNumbers(i int) (int, string) {
 	switch {
-	case i%15 == 0:
-		return i, "FizzBuzz"
-	case i%3 == 0:
-		return i, "Fizz"
-	case i%5 == 0:
-		return i, "Buzz"
+	case i%2 == 0:
+		return i, "Even"
+	default:
+		return i, "Odd"
 	}
-	return i, ""
 }
