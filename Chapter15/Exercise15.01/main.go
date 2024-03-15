@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	var prop string
+	var property string
 
 	db, err := sql.Open("postgres", "user=postgres password=Start!123 host=127.0.0.1 port=5432 dbname=postgres sslmode=disable")
 
@@ -46,15 +46,15 @@ ALTER TABLE Number
 
 	for i := 0; i < 100; i++ {
 		if i%2 == 0 {
-			prop = "Even"
+			property = "Even"
 		} else {
-			prop = "Odd"
+			property = "Odd"
 		}
-		_, err = insert.Exec(i, prop)
+		_, err = insert.Exec(i, property)
 		if err != nil {
 			panic(err)
 		} else {
-			fmt.Println("The number:", i, "is:", prop)
+			fmt.Println("The number:", i, "is:", property)
 		}
 	}
 	insert.Close()
