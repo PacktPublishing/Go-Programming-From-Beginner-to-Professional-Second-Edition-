@@ -1,25 +1,21 @@
 package main
 
 import (
-	"encoding/json"
+	"fmt"
 	"log"
 	"net/http"
 )
 
 type PageWithCounter struct {
-	Counter int    `json:"views"`
-	Heading string `json:"title"`
+	Counter int    `json:"counter"`
+	Heading string `json:"heading"`
 	Content string `json:"content"`
 }
 
 func (h *PageWithCounter) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	h.Counter++
-	bts, err := json.Marshal(h)
-	if err != nil {
-		w.WriteHeader(400)
-		return
-	}
-	w.Write([]byte(bts))
+	msg := fmt.Sprintf("<h1>%s</h1>\n<p>%s<p>\n<p>Views: %d</p>", h.Heading, h.Content, h.Counter)
+	w.Write([]byte(msg))
 }
 
 func main() {
