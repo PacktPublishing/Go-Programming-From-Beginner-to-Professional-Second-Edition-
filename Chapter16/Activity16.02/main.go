@@ -1,35 +1,49 @@
 package main
 
 import (
-	"encoding/json"
+	"html/template"
 	"log"
 	"net/http"
+	"strings"
 )
 
-type PageWithCounter struct {
-	Counter int    `json:"views"`
-	Heading string `json:"title"`
-	Content string `json:"content"`
+type Visitor struct {
+	Name string
 }
 
-func (h *PageWithCounter) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	h.Counter++
-	bts, err := json.Marshal(h)
-	if err != nil {
-		w.WriteHeader(400)
-		return
+type Hello struct {
+	tpl *template.Template
+}
+
+func (h Hello) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	vl := r.URL.Query()
+
+	cust := Visitor{}
+
+
+	name, ok := vl["name"]
+	if ok {
+		cust.Name = strings.Join(name, ",")
 	}
-	w.Write([]byte(bts))
+
+	h.tpl.Execute(w, cust)
+}
+
+// NewHello returns a new Hello handler
+func NewHello(tplPath string) (*Hello, error){
+	tmpl, err := template.ParseFiles(tplPath)
+	if err != nil {
+		return nil, err
+	}
+	return &Hello{tmpl}, nil
 }
 
 func main() {
-	hello := PageWithCounter{Heading: "Hello World", Content: "This is the main page"}
-	cha1 := PageWithCounter{Heading: "Chapter 1", Content: "This is the first chapter"}
-	cha2 := PageWithCounter{Heading: "Chapter 2", Content: "This is the second chapter"}
-
-	http.Handle("/", &hello)
-	http.Handle("/chapter1", &cha1)
-	http.Handle("/chapter2", &cha2)
+	hello, err := NewHello("./index.html")
+	if err != nil {
+		log.Fatal(err)
+	}
+	http.Handle("/", hello)
 
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }

@@ -1,40 +1,48 @@
 package main
-
 import (
-	"fmt"
+	"io/ioutil"
 	"net/http"
 	"net/http/httptest"
-	"strings"
 	"testing"
 )
-
-func TestPageWithCounter_ServeHTTP(t *testing.T) {
-	cntr := PageWithCounter{Heading: "title", Content:"some Content"}
-
-	r := httptest.NewRequest(http.MethodGet, "/", strings.NewReader(""))
-	w := httptest.NewRecorder()
-
-	cntr.ServeHTTP(w,r)
-	if cntr.Counter != 1 {
-		t.Errorf("We expected 1 view but we received %d", cntr.Counter)
+func Test_name(t *testing.T) {
+	hdl, err := NewHello("./index.html")
+	if err != nil {
+		t.Error(err)
 	}
-
-	msg := fmt.Sprintf("{\"views\":%d,\"title\":\"%s\",\"content\":\"%s\"}", 1, cntr.Heading, cntr.Content)
-
-	if w.Body.String() != msg {
-		t.Errorf("Expected  '%s' but received %s", msg, w.Body.String())
+	srv := httptest.NewServer(hdl)
+	rsp, err := http.Get(srv.URL + "/?name=john")
+	if err != nil {
+		t.Error(err)
 	}
-
-	w = httptest.NewRecorder()
-
-	cntr.ServeHTTP(w,r)
-	if cntr.Counter != 2 {
-		t.Errorf("We expected 1 view but we received %d", cntr.Counter)
+	expected, err := ioutil.ReadFile("./teststatics/john.html")
+	if err != nil {
+		t.Error(err)
 	}
+	actual := make([]byte, rsp.ContentLength)
+	rsp.Body.Read(actual)
+	if  string(actual)!= string(expected) {
+		t.Errorf("\n%s\n%s", string(expected),string(actual))
+	}
+}
 
-	msg = fmt.Sprintf("{\"views\":%d,\"title\":\"%s\",\"content\":\"%s\"}", 2, cntr.Heading, cntr.Content)
-
-	if w.Body.String() != msg {
-		t.Errorf("Expected  '%s' but received %s", msg, w.Body.String())
+func Test_anonymous(t *testing.T) {
+	hdl, err := NewHello("./index.html")
+	if err != nil {
+		t.Error(err)
+	}
+	srv := httptest.NewServer(hdl)
+	rsp, err := http.Get(srv.URL + "/")
+	if err != nil {
+		t.Error(err)
+	}
+	expected, err := ioutil.ReadFile("./teststatics/anonymous.html")
+	if err != nil {
+		t.Error(err)
+	}
+	actual := make([]byte, rsp.ContentLength)
+	rsp.Body.Read(actual)
+	if  string(actual)!= string(expected) {
+		t.Errorf("\n%s\n%s", string(expected),string(actual))
 	}
 }
