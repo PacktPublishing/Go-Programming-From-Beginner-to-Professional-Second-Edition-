@@ -19,7 +19,7 @@ func (srv server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	uploadedFile.Close()
+	defer uploadedFile.Close()
 
 	err = os.WriteFile(fmt.Sprintf("./%s", uploadedFileHeader.Filename), fileContent, 0o600)
 	if err != nil {

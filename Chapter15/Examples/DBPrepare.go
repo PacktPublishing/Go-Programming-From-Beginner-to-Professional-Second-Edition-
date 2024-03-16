@@ -25,7 +25,10 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println("The name column value is", name, "of the row with id=", id)
-	qryrow.Close()
+	fmt.Printf("The name with id %d is %s", id, name)
+	err = qryrow.Close()
+	if err != nil {
+		panic(err)
+	}
 	db.Close()
 }
