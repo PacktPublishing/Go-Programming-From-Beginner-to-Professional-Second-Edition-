@@ -21,7 +21,7 @@ var helloList = []string{
 
 func main() {
 	// Seed random number generator using the current time
-	rand.Seed(time.Now().UnixNano())
+	rand.NewSource(time.Now().UnixNano())
 	// Generate a random number in the range of out list
 	index := rand.Intn(len(helloList))
 	// Call a function and receive multiple return values

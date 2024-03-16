@@ -1,4 +1,5 @@
 package main
+
 import (
 	"errors"
 	"fmt"
@@ -6,6 +7,7 @@ import (
 	"os"
 	"time"
 )
+
 func main() {
 	r := random(1, 20)
 	err := a(r)
@@ -20,7 +22,7 @@ func main() {
 	}
 }
 func random(min, max int) int {
-	rand.Seed(time.Now().UTC().UnixNano())
+	rand.NewSource(time.Now().UTC().UnixNano())
 	return rand.Intn((max-min)+1) + min
 }
 func a(i int) error {
