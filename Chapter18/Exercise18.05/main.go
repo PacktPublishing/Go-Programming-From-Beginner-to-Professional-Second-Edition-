@@ -12,11 +12,8 @@ func greet(ch chan string) {
 }
 func main() {
 	ch := make(chan string)
-
 	go greet(ch)
-
 	ch <- "Hello John"
-
 	log.Println(<-ch)
 	log.Println(<-ch)
 }

@@ -9,9 +9,6 @@ func greet(ch chan string) {
 }
 func main() {
 	ch := make(chan string)
-
 	go greet(ch)
-
 	log.Println(<-ch)
-
 }
