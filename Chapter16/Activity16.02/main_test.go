@@ -1,10 +1,12 @@
 package main
+
 import (
 	"io/ioutil"
 	"net/http"
 	"net/http/httptest"
 	"testing"
 )
+
 func Test_name(t *testing.T) {
 	hdl, err := NewHello("./index.html")
 	if err != nil {
@@ -21,8 +23,8 @@ func Test_name(t *testing.T) {
 	}
 	actual := make([]byte, rsp.ContentLength)
 	rsp.Body.Read(actual)
-	if  string(actual)!= string(expected) {
-		t.Errorf("\n%s\n%s", string(expected),string(actual))
+	if string(actual) != string(expected) {
+		t.Errorf("\n%s\n%s", string(expected), string(actual))
 	}
 }
 
@@ -42,7 +44,7 @@ func Test_anonymous(t *testing.T) {
 	}
 	actual := make([]byte, rsp.ContentLength)
 	rsp.Body.Read(actual)
-	if  string(actual)!= string(expected) {
-		t.Errorf("\n%s\n%s", string(expected),string(actual))
+	if string(actual) != string(expected) {
+		t.Errorf("\n%s\n%s", string(expected), string(actual))
 	}
 }

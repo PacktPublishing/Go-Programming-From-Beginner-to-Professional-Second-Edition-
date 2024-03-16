@@ -30,7 +30,7 @@ func main() {
 		if err != nil {
 			panic(err)
 		}
-		fmt.Println(id, name)
+		fmt.Printf("Retrieved data from db: %d %s\n”, id, name")
 	}
 
 	err = rows.Err()
@@ -38,6 +38,9 @@ func main() {
 		panic(err)
 	}
 
-	rows.Close()
+	err = rows.Close()
+	if err != nil {
+		panic(err)
+	}
 	db.Close()
 }

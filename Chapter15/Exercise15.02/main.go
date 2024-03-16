@@ -21,14 +21,14 @@ func main() {
 		fmt.Println("The connection to the DB was successfully initialized!")
 	}
 
-	AllTheNumbers := "SELECT * FROM Number"
-	Numbers, err := db.Prepare(AllTheNumbers)
+	allTheNumbers := "SELECT * FROM Number"
+	numbers, err := db.Prepare(allTheNumbers)
 	if err != nil {
 		panic(err)
 	}
 
 	primeSum = 0
-	result, err := Numbers.Query()
+	result, err := numbers.Query()
 	fmt.Println("The list of prime numbers:")
 	for result.Next() {
 		err = result.Scan(&number, &prop)
@@ -42,7 +42,7 @@ func main() {
 
 	}
 
-	Numbers.Close()
+	numbers.Close()
 	fmt.Println("\nThe total sum of prime numbers in this range is:", primeSum)
 
 	Remove := "DELETE FROM Number WHERE Property=$1"
@@ -55,12 +55,12 @@ func main() {
 	fmt.Println("Updating numbers...")
 
 	Update := "UPDATE Number SET Number=$1 WHERE Number=$2 AND Property=$3"
-	AllTheNumbers = "SELECT * FROM Number"
-	Numbers, err = db.Prepare(AllTheNumbers)
+	allTheNumbers = "SELECT * FROM Number"
+	numbers, err = db.Prepare(allTheNumbers)
 	if err != nil {
 		panic(err)
 	}
-	result, err = Numbers.Query()
+	result, err = numbers.Query()
 	for result.Next() {
 		err = result.Scan(&number, &prop)
 		if err != nil {
@@ -72,8 +72,7 @@ func main() {
 			panic(err)
 		}
 	}
-	Numbers.Close()
+	numbers.Close()
 	fmt.Println("The execution is now complete...")
 	db.Close()
-
 }

@@ -29,7 +29,7 @@ func getDataWithCustomOptionsAndReturnResponse() string {
 	if err != nil {
 		log.Fatal(err)
 	}
-	resp.Body.Close()
+	defer resp.Body.Close()
 
 	// return the response data
 	return string(data)
