@@ -36,7 +36,7 @@ func main() {
 }
 ```
 
-**OS Specific Instructions**
+## OS Specific Instructions
 * Sometimes some of the executable generated while running "go build" may not directly work for Windows, try running"go run ." or "go run main.go" 
 * For Exercise 13.03, "cat" command is OS specific, "type" command would work for Windows.
 * Running Exercise 13.04 may show some OS specific errors, replacing "echo" in code with "print" works for Windows.
