@@ -36,6 +36,12 @@ func main() {
 }
 ```
 
+**OS Specific Instructions**
+* Sometimes some of the executable generated while running "go build" may not directly work for Windows, try running"go run ." or "go run main.go" 
+* For Exercise 13.03, "cat" command is OS specific, "type" command would work for Windows.
+* Running Exercise 13.04 may show some OS specific errors, replacing "echo" in code with "print" works for Windows.
+* Exercise 14.01 applies for unix-like systems (linux and macOS). Windows does not work with signals the same way so this exercise will not work for windows. 
+
 **Following is what you need for this book:**
 Designed for both complete beginners in Go as well as professionals transitioning from another programming language, this book equips developers with skills needed to build real-world projects and launch their career in Go. With a step-by-step approach, beginners can grasp Go fundamentals even without prior programming experience, and gradually advance to idiomatic Go best practices, exploring the latest features of the language.
 
@@ -47,7 +53,7 @@ With the following software and hardware list you can run all code files present
 | Go Compiler | Windows, macOS, Linux (https://packt.live/375DQDA) |
 | Git | Windows, macOS, Linux (https://packt.live/35ByRug) |
 | Visual Studio Code | Windows, macOS, Linux (https://packt.live/35KD2Ek) |
-| Docker | Windows (https://packt.live/2EKGDG6), macOS (https://packt.live/34VJLJD), Linux (https://packt.live/2Mn8Cjc) |
+| Docker | Windows (https://packt.live/2EKGDG6), macOS (https://packt.live/34VJLJD), Linux |
 | PostgreSQL | Windows, macOS, Linux (https://www.postgresql.org/download/) |
 
 ## Related products
