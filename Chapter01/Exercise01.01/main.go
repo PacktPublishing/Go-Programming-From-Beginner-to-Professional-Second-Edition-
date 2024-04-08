@@ -8,8 +8,9 @@ import (
 )
 
 func main() {
-	rand.NewSource(time.Now().UnixNano())
-	r := rand.Intn(5) + 1
+	source := rand.NewSource(time.Now().UnixNano())
+	rng := rand.New(source)
+	r := rng.Intn(5) + 1
 	stars := strings.Repeat("*", r)
 	fmt.Println(stars)
 }
