@@ -57,10 +57,10 @@ With the following software and hardware list you can run all code files present
 | PostgreSQL | Windows, macOS, Linux (https://www.postgresql.org/download/) |
 
 ## Errata
-* Page 10 (Step 5): **rand.Seed(time.Now().UnixNano())** _should be_ **source := rand.NewSource(time.Now().UnixNano())**
+* Page 10 (Exercise 1.01, Step 5): **rand.Seed(time.Now().UnixNano())** _should be_ **source := rand.NewSource(time.Now().UnixNano())**
                                                                      **rng := rand.New(source)**
-* Page 10 (Step 6): **r := rand.Intn(5) + 1** _should be_ **r := rng.Intn(5) + 1**
-* Page 11 (Step 9): **go run .** _should be_ **go run main.go**
+* Page 10 (Exercise 1.01, Step 6): **r := rand.Intn(5) + 1** _should be_ **r := rng.Intn(5) + 1**
+* Page 11 (Exercise 1.01, Step 9): **go run .** _should be_ **go run main.go**
 
 ## Related products
 * gRPC Go for Professionals [[Packt]](https://www.packtpub.com/product/grpc-go-for-professionals/9781837638840) [[Amazon]](https://a.co/d/e8CWmQd)
