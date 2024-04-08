@@ -56,6 +56,12 @@ With the following software and hardware list you can run all code files present
 | Docker | Windows (https://packt.live/2EKGDG6), macOS (https://packt.live/34VJLJD), Linux |
 | PostgreSQL | Windows, macOS, Linux (https://www.postgresql.org/download/) |
 
+## Errata
+* Page 10 (Step 5): **rand.Seed(time.Now().UnixNano())** _should be_ **source := rand.NewSource(time.Now().UnixNano())**
+                                                                     **rng := rand.New(source)**
+* Page 10 (Step 6): **r := rand.Intn(5) + 1** _should be_ **r := rng.Intn(5) + 1**
+* Page 11 (Step 9): **go run .** _should be_ **go run main.go**
+
 ## Related products
 * gRPC Go for Professionals [[Packt]](https://www.packtpub.com/product/grpc-go-for-professionals/9781837638840) [[Amazon]](https://a.co/d/e8CWmQd)
 * Building Modern CLI Applications in Go [[Packt]](https://www.packtpub.com/product/building-modern-cli-applications-in-go/9781804611654) [[Amazon]](https://a.co/d/7RhPoLY)
