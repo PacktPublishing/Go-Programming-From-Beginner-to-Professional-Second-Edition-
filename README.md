@@ -61,6 +61,8 @@ With the following software and hardware list you can run all code files present
                                                                      **rng := rand.New(source)**
 * Page 10 (Exercise 1.01, Step 6): **r := rand.Intn(5) + 1** _should be_ **r := rng.Intn(5) + 1**
 * Page 11 (Exercise 1.01, Step 9): **go run .** _should be_ **go run main.go**
+* Page 38 (Paragraph 1 , line 4): **it's a pointer because its output starts with &.** _should be_ **it's a pointer because we declared the variable with &.**
+* Page 41 (Exercise 1.15, Step 4): **pointer** should be neglected
 
 ## Related products
 * gRPC Go for Professionals [[Packt]](https://www.packtpub.com/product/grpc-go-for-professionals/9781837638840) [[Amazon]](https://a.co/d/e8CWmQd)
