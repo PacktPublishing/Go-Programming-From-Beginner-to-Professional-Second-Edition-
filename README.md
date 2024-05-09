@@ -58,7 +58,7 @@ With the following software and hardware list you can run all code files present
 
 ## Errata
 * Page 10 (Exercise 1.01, Step 5): **rand.Seed(time.Now().UnixNano())** _should be_ **source := rand.NewSource(time.Now().UnixNano())**
-                                                                     **rng := rand.New(source)**
+                                                                                    **rng := rand.New(source)**
 * Page 10 (Exercise 1.01, Step 6): **r := rand.Intn(5) + 1** _should be_ **r := rng.Intn(5) + 1**
 * Page 11 (Exercise 1.01, Step 9): **go run .** _should be_ **go run main.go**
 * Page 38 (Paragraph 1 , line 4): **it's a pointer because its output starts with &.** _should be_ **it's a pointer because we declared the variable with &.**
