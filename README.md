@@ -60,9 +60,15 @@ With the following software and hardware list you can run all code files present
 * Page 10 (Exercise 1.01, Step 5): **rand.Seed(time.Now().UnixNano())** _should be_ **source := rand.NewSource(time.Now().UnixNano())**
                                                                                     **rng := rand.New(source)**
 * Page 10 (Exercise 1.01, Step 6): **r := rand.Intn(5) + 1** _should be_ **r := rng.Intn(5) + 1**
-* Page 11 (Exercise 1.01, Step 9): **go run .** _should be_ **go run main.go**
+                                   **between 0 and then** _should be_ **between o and 4, then**
 * Page 38 (Paragraph 1 , line 4): **it's a pointer because its output starts with &.** _should be_ **it's a pointer because we declared the variable with &.**
 * Page 41 (Exercise 1.15, Step 4): **pointer** should be neglected
+* Page 164 (Paragraph 2, line 3): **Go can assign a variable to a function** _should be_ **Go can assign a function to a variable**
+* Page 194 (Exercise 5.07, Step 4): **func main() {import "fmt"** _should be_ **package main**
+                                    **counter :==4**                          **import "fmt"**
+                                                                              **func main() {**
+                                                                              **counter := 4**                              
+* Page 194 (Exercise 5.07, Step 7): **I--** _should be_ **i--**
 
 ## Related products
 * gRPC Go for Professionals [[Packt]](https://www.packtpub.com/product/grpc-go-for-professionals/9781837638840) [[Amazon]](https://a.co/d/e8CWmQd)
