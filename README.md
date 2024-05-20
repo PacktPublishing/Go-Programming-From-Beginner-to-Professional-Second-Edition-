@@ -60,7 +60,7 @@ With the following software and hardware list you can run all code files present
 * Page 10 (Exercise 1.01, Step 5): **rand.Seed(time.Now().UnixNano())** _should be_ **source := rand.NewSource(time.Now().UnixNano())**
                                                                                     **rng := rand.New(source)**
 * Page 10 (Exercise 1.01, Step 6): **r := rand.Intn(5) + 1** _should be_ **r := rng.Intn(5) + 1**
-                                   **between 0 and then** _should be_ **between o and 4, then**
+* Page 10 (Exercise 1.01, Step 6): **between 0 and then** _should be_ **between o and 4, then**                                 
 * Page 38 (Paragraph 1 , line 4): **it's a pointer because its output starts with &.** _should be_ **it's a pointer because we declared the variable with &.**
 * Page 41 (Exercise 1.15, Step 4): **pointer** should be neglected
 * Page 164 (Paragraph 2, line 3): **Go can assign a variable to a function** _should be_ **Go can assign a function to a variable**
@@ -76,6 +76,6 @@ With the following software and hardware list you can run all code files present
 
 ## Get to Know the Author
 **Samantha Coyle**
-Samantha Coyle, a Soft ware Engineer at Diagrid, specializes in Go for cloud-native developer tooling, adept at abstracting application development challenges. Committed to Open Source, she actively contributes to projects like Dapr and Testcontainers. With a diverse background in retail computer vision solutions and successful stabilization of industrial edge use cases, particularly within biopharma data pipelines, Samantha brings invaluable expertise to her projects. Her expertise extends to being CKAD-certifi ed and reviewing Go textbooks. She is passionate about empowering early-career, diverse professionals.
+a Software Engineer at Diagrid, specializes in Go for cloud-native developer tooling, adept at abstracting application development challenges. Committed to Open Source, she actively contributes to projects like Dapr and Testcontainers. With a diverse background in retail computer vision solutions and successful stabilization of industrial edge use cases, particularly within biopharma data pipelines, Samantha brings invaluable expertise to her projects. Her expertise extends to being CKAD-certifi ed and reviewing Go textbooks. She is passionate about empowering early-career, diverse professionals.
 
 Samantha is part of a family of gophers, and enjoys GopherCon with her brother and identical twin sister. A seasoned speaker, she has presented at various conferences, including GopherCon
