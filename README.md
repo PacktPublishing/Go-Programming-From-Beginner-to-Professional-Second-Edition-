@@ -69,6 +69,9 @@ With the following software and hardware list you can run all code files present
                                                                               **func main() {**
                                                                               **counter := 4**                              
 * Page 194 (Exercise 5.07, Step 7): **I--** _should be_ **i--**
+* Page 248 (Paragraph 3, line 1): **implement an interface explicitly** _should be_ **are implemented explicitly**
+* Page 267 (3rd block of code, line 2): **s interface{}** _should be_ **i interface{}**
+*
 
 ## Related products
 * gRPC Go for Professionals [[Packt]](https://www.packtpub.com/product/grpc-go-for-professionals/9781837638840) [[Amazon]](https://a.co/d/e8CWmQd)
