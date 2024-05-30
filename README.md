@@ -71,7 +71,7 @@ With the following software and hardware list you can run all code files present
 * Page 194 (Exercise 5.07, Step 7): **I--** _should be_ **i--**
 * Page 248 (Paragraph 3, line 1): **implement an interface explicitly** _should be_ **are implemented explicitly**
 * Page 267 (3rd block of code, line 2): **s interface{}** _should be_ **i interface{}**
-*
+* Page 297 (Introduction, Paragraph 1): It erroneously talks about the next chapter instead of the previous. This _should be_ **In the previous chapter, we delved into the realm of Go generics, an innovative advancement in the language offering type parameters, constraints, and type inference.**
 
 ## Related products
 * gRPC Go for Professionals [[Packt]](https://www.packtpub.com/product/grpc-go-for-professionals/9781837638840) [[Amazon]](https://a.co/d/e8CWmQd)
