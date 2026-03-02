@@ -1,3 +1,5 @@
+<p align='center'><a href='https://www.eventbrite.com/e/ship-production-pytorch-system-in-a-day-train-optimize-deploy-workshop-tickets-1983348934052?aff=GitHub'><img src='https://static.packt-cdn.com/assets/images/packt+events/workshop_ashish_github.png'/></a></p>
+
 # Go Programming - From Beginner to Professional Second Edition
 
 <a href="https://www.packtpub.com/product/go-programming-from-beginner-to-professional-second-edition/9781803243054"> <img src="https://content.packt.com/B18621/cover_image_small.jpg" alt="Go Programming - From Beginner to Professional - Second Edition" itemprop="url" height="256px" align="right">
